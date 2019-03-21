@@ -198,7 +198,7 @@ class TypoRenderBasic extends TypoRender
       }
     } else if (mode == 3)
     {
-      fill(0);
+      float size=1;
       if (motifSVG != null)
         for (i=0; i<ptPerShapes.length; i++)
         {
@@ -209,9 +209,11 @@ class TypoRenderBasic extends TypoRender
             if (displacement != null)
             {
               pushMatrix();
-              translate(p.x, p.y);
-              rotate(angleRad);
-              shape(motifSVG, 0, 0);
+              translate(p.x+displacement.x, p.y+displacement.y);
+              rotate(bMotionAngle ? getValue(j,ptPerShapes[i].length,angleRad) : angleRad);
+              shapeMode(CENTER);
+              size = bMotionSize1 ? getValue(j,ptPerShapes[i].length,size1) : size1;
+              shape(motifSVG, 0, 0, size, size);
               popMatrix();
             }
           }

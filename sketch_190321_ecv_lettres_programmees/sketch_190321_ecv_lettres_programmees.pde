@@ -32,7 +32,7 @@ String fontFilename = "futura.ttf";
 // Lettre par défaut à l'ouverture du programme
 String letter = "B";
 // Couleur du tracé
-color colorLines = color(200,0,0);
+color colorLines = color(200, 0, 0);
 // Fond (.svg )
 // Laisser le champ vide pour ne rien afficher
 //String backgroundFilename = "exports/190319_215808_export.svg"; 
@@ -50,7 +50,7 @@ String motifFilename = "images/motif.svg";
 // ----------------------------------------------------------
 // ----------------------------------------------------------
 // ----------------------------------------------------------
-PFont font15,font30;
+PFont font15, font30;
 
 // ----------------------------------------------------------
 PApplet applet;
@@ -83,8 +83,8 @@ void setup()
   typoRenderers.add( typoRenderBasic );
 
   typoRenderPhysics = new TypoRenderPhysics();
-//  typoRenderPhysics.set(fontFilename, letter, 20);
-//  typoRenderers.add( typoRenderPhysics );
+  //  typoRenderPhysics.set(fontFilename, letter, 20);
+  //  typoRenderers.add( typoRenderPhysics );
   typoRenderCurrent =  typoRenderBasic;
   initMedias();
   createControls();
@@ -96,17 +96,16 @@ void setup()
 void draw()
 {
   float dt = timer.dt();
-  
+
   background(255);
   if (backgroundSVG!=null)
   {
     pushStyle();
     noFill();
-    stroke(0,50);
+    stroke(0, 50);
     shape(backgroundSVG, 0, 0, width, height);
     popStyle();
   }
-  shape(motifSVG,0,0);
 
   if (bExportSVG)
   {
@@ -129,8 +128,7 @@ void keyPressed()
   {
     for (TypoRender tr : typoRenderers) 
       tr.setText(""+key);
-  }
-  else if ((key >= '1' && key <= '9'))
+  } else if ((key >= '1' && key <= '9'))
   {
     int mode =  int( key-'1' );
     typoRenderBasic.setMode( mode );
@@ -142,9 +140,9 @@ void keyPressed()
 TypoRender getTypoRender(String name)
 {
   TypoRender tr = null;
-    for (TypoRender tr_ : typoRenderers) 
-      if (tr_.name.equals(name))
-        tr = tr_;
+  for (TypoRender tr_ : typoRenderers) 
+    if (tr_.name.equals(name))
+      tr = tr_;
   return tr;
 }
 
@@ -165,17 +163,17 @@ void drawCustom(int nCalque, int indexPoint, int nbPoints)
   {
     size2 = typoRenderBasic.getValue(indexPoint, nbPoints, size1); // valeur dynamique de size1
   }
+  arc(0, 0, size1, size1, 0, PI/1.5);
 
 
-  
-  beginShape();
-    vertex(-size1,-size1);
-    vertex(size1,-size1);
-    vertex(0,size1);
-    vertex(-2*size1,size1);
-  endShape(CLOSE);
-  
-  
+  /*  beginShape();
+   vertex(-size1,-size1);
+   vertex(size1,-size1);
+   vertex(0,size1);
+   vertex(-2*size1,size1);
+   endShape(CLOSE);
+   */
+
   //ellipse(0,0,size2,size2);
   //bezier(0,0, size1, size1, size2, size2, 40,40);
 }
