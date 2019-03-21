@@ -36,7 +36,7 @@ class Format
 void defineFormats()
 {
   formats = new ArrayList<Format>();
-  formats.add( new Format(30, 40, 20) ); // 1
+  formats.add( new Format(40, 40, 20) ); // 2
   formats.add( new Format(50, 50, 15) ); // 2
   formats.add( new Format(50, 70, 15) ); // 3
   formats.add( new Format(70, 70, 15) ); // 4

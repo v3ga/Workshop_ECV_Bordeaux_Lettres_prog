@@ -32,7 +32,7 @@ String fontFilename = "futura.ttf";
 // Lettre par défaut à l'ouverture du programme
 String letter = "B";
 // Couleur du tracé
-color colorLines = color(200, 0, 0);
+color colorLines = color(0, 0, 0);
 // Fond (.svg )
 // Laisser le champ vide pour ne rien afficher
 //String backgroundFilename = "exports/190319_215808_export.svg"; 
@@ -71,7 +71,7 @@ void settings()
 {
   applet=(PApplet)this;
   defineFormats();
-  applyFormatSize("21x30");
+  applyFormatSize("40x40");
 }
 
 // ----------------------------------------------------------
@@ -128,11 +128,16 @@ void keyPressed()
   {
     for (TypoRender tr : typoRenderers) 
       tr.setText(""+key);
-  } else if ((key >= '1' && key <= '9'))
+  } 
+  else if ((key >= '1' && key <= '9'))
   {
     int mode =  int( key-'1' );
     typoRenderBasic.setMode( mode );
     println("mode="+mode);
+  }
+  else if (key == ' ')
+  {
+    saveFrame("data/exports/"+timestamp()+"_export.jpg");
   }
 }
 
