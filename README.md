@@ -5,3 +5,5 @@ Mini atelier à l'ECV Bordeaux en mars 2019
 <img src="images/190321_221901_export.jpg" width="250" title="futura.ttf / U" align="left" />
 <img src="images/190321_221937_export.jpg" width="250" title="futura.ttf / A" align="left" />
 <img src="images/190321_222050_export.jpg" width="250" title="futura.ttf / U" align="left" />
+<img src="images/190321_223401_export.jpg" width="250" title="futura.ttf / M" align="left" />
+<img src="images/190321_223703_export.jpg" width="250" title="futura.ttf / S" align="left" />
