@@ -222,12 +222,16 @@ class TypoRenderBasic extends TypoRender
       {
         for (j=0; j<ptPerShapes[i].length; j++)
         {
-          p = ptPerShapes[i][j];
-          pushMatrix();
-          translate(p.x, p.y);
-          rotate(angleRad);
-          drawCustom(nCalque, j, ptPerShapes[i].length);
-          popMatrix();
+          displacement = getDisplacement(i, j);
+          if (displacement != null)
+          {
+            p = ptPerShapes[i][j];
+            pushMatrix();
+            translate(p.x+displacement.x, p.y+displacement.y);
+              rotate(bMotionAngle ? getValue(j,ptPerShapes[i].length,angleRad) : angleRad);
+            drawCustom(nCalque, j, ptPerShapes[i].length);
+            popMatrix();
+          }
         }
       }
     }

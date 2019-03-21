@@ -30,9 +30,9 @@ import processing.svg.*;
 // Nom de la fonte à placer dans le dossier data/fontes
 String fontFilename = "futura.ttf";
 // Lettre par défaut à l'ouverture du programme
-String letter = "A";
+String letter = "B";
 // Couleur du tracé
-color colorLines = color(0,0,0);
+color colorLines = color(200,0,0);
 // Fond (.svg )
 // Laisser le champ vide pour ne rien afficher
 //String backgroundFilename = "exports/190319_215808_export.svg"; 
@@ -82,7 +82,7 @@ void setup()
   typoRenderBasic.set(fontFilename, letter, 20);
   typoRenderers.add( typoRenderBasic );
 
-//  typoRenderPhysics = new TypoRenderPhysics();
+  typoRenderPhysics = new TypoRenderPhysics();
 //  typoRenderPhysics.set(fontFilename, letter, 20);
 //  typoRenderers.add( typoRenderPhysics );
   typoRenderCurrent =  typoRenderBasic;
@@ -151,5 +151,31 @@ TypoRender getTypoRender(String name)
 // ----------------------------------------------------------
 void drawCustom(int nCalque, int indexPoint, int nbPoints)
 {
+  // float size1 = typoRenderBasic.getValue(indexPoint, nbPoints, typoRenderBasic.size1);
+  // ellipse(random(-10,10), random(-20,20) ,10,10);
+  // line(0,-random(0,100) ,0,random(0,100));
+  float size1 = typoRenderBasic.size1;
+  if (typoRenderBasic.bMotionSize1) // 
+  {
+    size1 = typoRenderBasic.getValue(indexPoint, nbPoints, size1); // valeur dynamique de size1
+  }
+
+  float size2 = typoRenderBasic.size2;
+  if (typoRenderBasic.bMotionSize2) // 
+  {
+    size2 = typoRenderBasic.getValue(indexPoint, nbPoints, size1); // valeur dynamique de size1
+  }
+
+
   
+  beginShape();
+    vertex(-size1,-size1);
+    vertex(size1,-size1);
+    vertex(0,size1);
+    vertex(-2*size1,size1);
+  endShape(CLOSE);
+  
+  
+  //ellipse(0,0,size2,size2);
+  //bezier(0,0, size1, size1, size2, size2, 40,40);
 }
