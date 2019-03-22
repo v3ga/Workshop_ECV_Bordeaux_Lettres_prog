@@ -13,7 +13,6 @@ Mini atelier à l'ECV Bordeaux en mars 2019
 <img src="images/190321_224029_export.jpg" width="270" title="futura.ttf / V" align="left" />
 </p>
 
-<p>
 ## Références
 * https://www.itsnicethat.com/articles/laurent-malys-digital-graphic-design-070219 <br />*Travail de Laurent Malys.*
 * https://vimeo.com/101383026 <br />*Generative typography with Processing*
@@ -26,5 +25,3 @@ Mini atelier à l'ECV Bordeaux en mars 2019
 * https://github.com/FreeArtBureau/alphaGraph <br />*Alphagraph - Exploring letter forms in a parametric manner.*
 * https://abduzeedo.com/node/65422 <br />*Lemniscate Typeface by Rosy Gorolova.*
 * http://generative-typografie.de/
-
-</p>
